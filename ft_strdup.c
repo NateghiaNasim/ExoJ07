@@ -6,27 +6,43 @@
 /*   By: nnateghi <nnateghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 15:55:02 by nnateghi          #+#    #+#             */
-/*   Updated: 2020/07/29 16:05:20 by nnateghi         ###   ########.fr       */
+/*   Updated: 2020/07/29 23:00:05 by nnateghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 char	ft_strdup(char *src)
 {
-	int	i;
-	int	len;
 	char	*str;
+	int		str_size;
+	int		i;
 
-	len = 0;
-	while (src[len])
-		len++;
-	str = (char*)malloc(sizeof(*str) * (len + 1));
 	i = 0;
-	while (i < len)
+	str_size = 0;
+	while (src[str_size])
+	{
+		str_size++;
+	}
+	str = (char *)malloc(str_size * sizeof(*str) + 1);
+	if (!str)
+		return (0);
+	while (i < str_size)
 	{
 		str[i] = src[i];
 		i++;
 	}
-	return (str);
+	str[str_size] = '\0';
+	return (*str);
+	free(str);
+}
+
+int		main(void)
+{
+	char *str= "12345";
+	char *copy;
+	copy = ft_strdup(str);
+	printf("%s", copy);
+	return (0);
 }
