@@ -6,7 +6,7 @@
 /*   By: nnateghi <nnateghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 15:55:02 by nnateghi          #+#    #+#             */
-/*   Updated: 2020/07/29 23:00:05 by nnateghi         ###   ########.fr       */
+/*   Updated: 2020/07/30 21:19:28 by nnateghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,4 @@ char	ft_strdup(char *src)
 	str[str_size] = '\0';
 	return (*str);
 	free(str);
-}
-
-int		main(void)
-{
-	char *str= "12345";
-	char *copy;
-	copy = ft_strdup(str);
-	printf("%s", copy);
-	return (0);
 }
